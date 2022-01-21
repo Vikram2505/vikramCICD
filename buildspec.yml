@@ -1,9 +1,14 @@
 version: 0.2
 
 phases:
+pre_build:
+  commands:
+    - echo "we are here in the pre build phase"
   build:
     commands:
     - echo "This is build phase... Zipping my webpage"
+    - echo "we will run some test"
+    - grep -Fq "Congrulations" index.html
  
   post_build:
     commands:
